@@ -1,10 +1,15 @@
 import express from "express";
 import DBConection from "./db/db.conection.js";
+
 import dotenv from "dotenv";
 import cors from "cors"
 
 const app = express();
 dotenv.config();
+
+//router
+import { router } from "../src/router/login.router.js";
+app.use("loginpage", router)
 
 const PORT = process.env.PORT || 5000;
 
